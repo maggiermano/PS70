@@ -1,0 +1,104 @@
+body {
+  padding-top: 56px;
+  margin: 0;
+}
+
+.about-section {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.about-left {
+  background: url('img/me.jpg') center/cover no-repeat;
+  height: 740px;
+  margin: 0;
+  background-size: contain;
+  padding: 0;
+}
+
+.about-text {
+  padding-top: 20px;
+  margin: 0;
+}
+
+@media (max-width: 767.98px) {
+  .about-left,
+  .about-text {
+    width: 100%;
+  }
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+  background-color: teal;
+  font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron {
+  background: url('img/background-img.jpeg') center/cover no-repeat fixed;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+  margin-bottom: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 !important;
+}
+
+.jumbotron-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+}
+
+.jumbotron h1 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 3em;
+}
+
+.jumbotron-content a.btn-primary {
+  background-color: cadetblue;
+  border-color: cadetblue;
+}
+
+.jumbotron-content a.btn-primary:hover {
+  background-color: darkcyan;
+  border-color: darkcyan;
+}
+
+.jumbotron-content a.btn-primary:active {
+  background-color: darkcyan;
+  border-color: darkcyan;
+}
+
+.card-section {
+  padding: 50px 0;
+  background-color: white;
+}
+
+.card {
+  border: none;
+  border-radius: 0 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: azure;
+}
+
+.card-section a.btn-primary {
+  background-color: cadetblue;
+  border-color: cadetblue;
+}
+
+.card-section a.btn-primary:hover {
+  background-color: darkcyan;
+  border-color: darkcyan;
+}
+
+.card-section a.btn-primary:active {
+  background-color: darkcyan;
+  border-color: darkcyan;
+}
