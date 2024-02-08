@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS70: Week 2</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap">
+</head>
+<body data-spy="scroll" data-target="#navbarNav" data-offset="56">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AboutMe/index.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Final Project Proposal</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="container" style="font-family: 'Roboto', sans-serif; padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <h1 style="text-align: center; font-family: 'Fjalla One', sans-serif; font-size: 60px;">Week 2: 2D Design & Cutting</h1>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px;">
+                <em>This week the assignment was broken into three parts:</em>
+            </p>
+            <ol>
+                <li>
+                    Create a box (shoebox-sized or slightly smaller) to hold your materials for the rest of the semester.
+                </li>
+                <li>
+                    Work through a Fusion 360 tutorial and document what you produce.
+                </li>
+                <li>
+                    Select at least 2 household objects or components from the lab. Measure them using calipers, and
+                    model them in Fusion 360. Create an assembly using these components, and document your work on your
+                    webpage.
+                </li>
+            </ol>
+            <h3 style="font-family: 'Roboto', sans-serif; font-size: 25px;">1. Maggie's Box</h3>
+            <p>
+                Maggie's Box is the name of the box I made for this assignment (very creative name, I know). Maggie's Box
+                consists of finger joints on the four corners of the cube and score lines that folded up from the bottom to
+                give the base of the box a neater finish. Although, this may seem like a simple box, what makes Maggie's Box
+                stand out is both its customization label and its handy lid. The lid is able to protect the electronics and
+                other vulnerable parts inside it from the elements.
+            </p>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <img src="img/image8.png" alt="Fusion 360 layout of box" style="width: 90%; height: 80vh; padding-bottom: 10px;">
+            </div>
+            <p>
+                Below are steps on how to make your own *Insert Your Name*'s Box.
+            </p>
+            <p>
+                <em>List of materials and resources used:</em>
+            </p>
+            <ul>
+                <li>
+                    Laser cutter
+                </li>
+                <li>
+                    Cardboard with thickness of 4.4mm
+                </li>
+                <li>
+                    Fusion 360 and Rhino for modelling
+                </li>
+            </ul>
+            <p>
+                <em>Steps for making Maggie's Box:</em>
+            </p>
+            <ol>
+                <li style="padding-top: 10px">
+                    <strong> Creating the layout of the box</strong>: Use Fusion 360 to design the outline of your box.
+                    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                        <img src="img/image1.png" alt="Fusion 360 layout of box" style="width: 48%; height: auto; padding-bottom: 10px;">
+                        <img src="img/image2.png" alt="Fusion 360 layout of box w/ dimensions" style="width: 48%; height: auto; padding-bottom: 10px;">
+                    </div>
+                    <ul>
+                        <li>Start by adding necessary parameters. In my case I added the parameters: length of 200mm,
+                        width of 120mm, height of 80mm, number of finger joints as 6 and thickness as 4.4mm. I also added
+                        a kerf parameter which I initially set to 0.1mm.</li>
+                        <li>Next draw your initial rectangle from the origin, entering the necessary parameters. Draw two
+                            corner faces of your box as well, so you have three sides total that make up one corner of
+                            the box.</li>
+                        <li>The next step is to add finger joints. Ensure that your finger joints account for kerf.
+                        This entails that the fingers are slightly bigger (add kerf to the width) and the holes are slightly
+                        smaller (subtract kerf from the width). I used the formula derived from Nathan's tutorial of
+                            height / (2 * number of fingers) for the width of the finger joints.</li>
+                        <li> Instead of repeating this for the three other sides. We will use the mirror tool in Fusion 360.
+                            Add vertical and horizontal mirror lines to the base of the box. Select the necessary fingers
+                            and sides you would like to mirror and follow the instructions on Fusion to complete the mirroring
+                        process.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Adding personalization to the box</strong>: Use the text tool in Fusion 360 to add your own
+                    personalization. The image above/below show's the text I added to the side of my box.
+                    <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+                        <img src="img/image3.png" alt="Personalization" style="width: 50%; height: 80%; padding-bottom: 10px;">
+                    </div>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Editing your layout in Rhino</strong>: After saving your file as a .dxf. Open Rhino to make
+                    final edits.
+                    <ul>
+                        <li>
+                            Delete extra lines such as construction lines, mirror lines and any other possible duplicate
+                            lines in Rhino to ensure there are no complications when using the laser cutter. You can
+                            achieve this by using commands such as explode, seldup, trim, etc.
+                        </li>
+                        <li>
+                            Assign each line as either a cut, score or engrave line. In this case I assigned the text lines
+                            and the base lines to be score lines and the rest as cut. (I chose score instead of engrave
+                            for the text because score lines came out more clear during a test run).
+                        </li>
+                        <li>
+                            Print your file to the laser cutter software.
+                        </li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Laser cut away!</strong>
+                    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                        <img src="img/image4.png" alt="Completed box" style="width: 32%; height: auto; padding-bottom: 10px;">
+                        <video width="32%" controls>
+                            <source src="img/video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="img/image5.png" alt="Completed box face top" style="width: 32%; height: auto; padding-bottom: 10px;">
+                    </div>
+                </li>
+                <li style="padding-top: 10px"><strong>Creating the lid of the box</strong>:
+                    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                        <img src="img/image6.png" alt="Completed box" style="width: 48%; height: auto; padding-bottom: 10px;">
+                        <img src="img/image7.png" alt="Completed box face top" style="width: 48%; height: auto; padding-bottom: 10px;">
+                    </div>
+                    Use Fusion 360 to design the outline of the lid. Follow
+                the instructions from step 1 making sure to adjust parameters accordingly. (ensure the length and width
+                    account for double the thickness of the material, so it fits over the box!) Make necessary edits in Rhino
+                    and laser cut away!
+                </li>
+            </ol>
+            <p><em>Fin.</em></p>
+            <h3 style="font-family: 'Roboto', sans-serif; font-size: 25px;">2. 2D Fusion Tutorial</h3>
+            <p><em>Below are images of what I created during <a href="">this Fusion 360 tutorial</a></em>.</p>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <img src="img/image15.png" alt="Fusion 360 tutorial" style="width: 48%; height: auto; padding-bottom: 10px;">
+                <img src="img/image16.png" alt="Fusion 360 tutorial" style="width: 48%; height: auto; padding-bottom: 10px;">
+            </div>
+
+            <h3 style="font-family: 'Roboto', sans-serif; font-size: 25px;">3. 3D Modelling and Assembly</h3>
+            <p>I decided pick two household objects that I use quite frequently to model: a mug and my all-time favorite
+            pen I brought from home. I made use of various Fusion 3D tutorials to get better suited to 3D modelling in fusion
+                before I got started. Below are images of the mug and the pen that compare their 3D models to their real life
+                shapes (I changed the color of the mug because white is a bit boring).
+            </p>
+            <p><em>Real life pen vs 3D model pen</em></p>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <img src="img/image9.png" alt="Pen in real life" style="width: 58%; height: auto; padding-bottom: 10px;">
+                <img src="img/image14.png" alt="Pen model" style="width: 38%; height: auto; padding-bottom: 10px;">
+            </div>
+            <p><em>Real life mug vs 3D model mug</em></p>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <img src="img/image10.png" alt="Mug in real life" style="width: 50%; height: 75vh">
+                <img src="img/image12.png" alt="Mug model" style="width: 50%; height: 80vh">
+            </div>
+            <p>I then combined these two separate household items to be in one assembly. I thought it would be nice to
+            put the pen in the mug to properly showcase the assembly. Below are images of the assembly and a video showing
+                a 360 degree view of the two items together.</p>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <img src="img/image11.png" alt="Pen in real life" style="width: 50%; height: auto">
+                <video width="50%" controls>
+                    <source src="img/video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
