@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS70: Week 4</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap">
+</head>
+<body data-spy="scroll" data-target="#navbarNav" data-offset="56">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AboutMe/index.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../FinalProjectIdea/index.html">Final Project Proposal</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="container" style="font-family: 'Roboto', sans-serif; padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <h1 style="text-align: center; font-family: 'Fjalla One', sans-serif; font-size: 60px;">Week 4: Microcontroller Programming</h1>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px;">
+                <em>This week the assignment was to program an Arduino board to do something.</em>
+            </p>
+            <h3 style="font-family: 'Roboto', sans-serif; font-size: 25px;">Raise the Roof... Party Mode!</h3>
+            <p>
+                Raise the Roof was cool on its own (check it out <a href="../Week3_HandToolsAndFabrication/index.html">here</a>), but imagine if it was
+                even cooler! Think lights and different tempos. Let's vamp this party up a notch.
+                Check out how I did this below using the arduino and microcontroller programming.
+            </p>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <img src="img/image8.gif" alt="raise the roof gif" style="width: 40%; height: auto; padding: 10px;">
+                <img src="img/image2.jpg" alt="finalized sculpture" style="width: 40%; height: auto; padding: 10px;">
+            </div>
+            <p>
+                <em>List of materials and resources used:</em>
+            </p>
+            <ul>
+                <li>
+                    Arduino
+                </li>
+                <li>
+                    LED RGB Strip
+                </li>
+            </ul>
+            <p>
+                <em>Steps for making Raise the Roof... Party Mode:</em>
+            </p>
+            <ol>
+                <li style="padding-top: 10px">
+                    <strong>Improving on the previous iteration</strong>: Stabilize the motor to the
+                    sculpture and decrease friction and torque.
+                    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                        <img src="img/image3.jpg" alt="Motor stability design" style="width: 48%; height: 50vh; padding-bottom: 10px;">
+                        <img src="img/image4.jpg" alt="Dowel stability" style="width: 48%; height: 50vh; padding-bottom: 10px;">
+                    </div>
+                    <ul>
+                        <li>Last week I was never able to stabilize the motor to the sculpture, so although
+                        it was a moving sculpture, it could not moe on its own. I decided to make a small table
+                        in fusion where the motor would rest and then zip tie the motor to that table. I also
+                        created wheels made from wood for the motor to attach to the rod. The use of wood made
+                        a big difference here, as the motor was now finally stable.</li>
+                        <li>I noticed that the size of the platforms for the dowels was too small and this was
+                        causing a lot of friction and torque which made it difficult for the motor to move at
+                        slower speeds (which I needed it to do for this week's assignment). I glued large platforms
+                        under the current ones which did the trick and decreased friction.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Multitasking with arduino</strong>: I introduced an LED RGB strip to my kinetic sculpture.
+                    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                        <img src="img/image1.jpeg" alt="arduino multitasking" style="width: 48%; height: 50vh; padding-bottom: 10px;">
+                        <video width="48%" height="395vh" controls>
+                            <source src="img/video1.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <ul>
+                        <li>Using both Object-Oriented Programming and multitasking, I was able to make the motor move
+                        dependent on the LED strip's state. So if the LEDs were flashing slowly then the motor would
+                        move at a slower pace and vice versa. I also made a stationary state where both the LED and motor
+                        stop.</li>
+                        <li>The code and circuit diagrams are shown below as well.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>The resulting Raise the Roof... Party Mode sculpture!</strong>
+                    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                        <video width="100%" controls>
+                            <source src="img/video2.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Circuit diagram sketch and Code</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image5.jpg" alt="Motor stability design" style="width: 80%; height: 50vh; padding-bottom: 10px;">
+                    </div>
+                    <pre>
+                        <code class="language-arduino">
+                        #include &amp;lt;Adafruit_NeoPixel.h&amp;gt;
+
+                        #define LED_PIN     9
+                        #define LED_COUNT   44
+
+                        class LEDStrip {
+                        private:
+                        Adafruit_NeoPixel strip;
+                        unsigned long previousMillis;
+                        const long slowInterval;
+                        const long fastInterval;
+                        int slowFlashStep;
+                        int fastFlashStep;
+                        bool slowFlashComplete;
+                        bool fastFlashComplete;
+                        uint32_t colors[3];
+
+                        public:
+                        // Constructor initializing LED Strip object
+                        LEDStrip(int ledCount, int ledPin, long slowInt, long fastInt)
+                        : strip(ledCount, ledPin, NEO_GRB + NEO_KHZ800),
+                        previousMillis(0),
+                        slowInterval(slowInt),
+                        fastInterval(fastInt),
+                        slowFlashStep(0),
+                        fastFlashStep(0),
+                        slowFlashComplete(false),
+                        fastFlashComplete(false) {
+                        colors[0] = strip.Color(255, 0, 0); // Red
+                        colors[1] = strip.Color(0, 255, 0); // Green
+                        colors[2] = strip.Color(0, 0, 255); // Blue
+                        }
+
+                        // Initialize LED strip
+                        void begin() {
+                        strip.begin();
+                        strip.show();
+                        }
+
+                        // Update LED strip based on flash intervals
+                        void update() {
+                        unsigned long currentMillis = millis();
+
+                        if (!slowFlashComplete) {
+                        if (currentMillis - previousMillis &amp;gt;= slowInterval) {
+                        previousMillis = currentMillis;
+                        strip.fill(colors[slowFlashStep % 3]);
+                        strip.show();
+                        slowFlashStep++;
+                        if (slowFlashStep &amp;gt;= 8 * 3) {
+                        slowFlashComplete = true;
+                        previousMillis = currentMillis;
+                        }
+                        }
+                        } else if (!fastFlashComplete) {
+                        if (currentMillis - previousMillis &amp;gt;= fastInterval) {
+                        previousMillis = currentMillis;
+                        strip.fill(colors[fastFlashStep % 3]);
+                        strip.show();
+                        fastFlashStep++;
+                        if (fastFlashStep &amp;gt;= 10 * 3) {
+                        fastFlashComplete = true;
+                        previousMillis = currentMillis;
+                        }
+                        }
+                        } else {
+                        if (currentMillis - previousMillis &amp;gt;= 5000) {
+                        previousMillis = currentMillis;
+                        slowFlashComplete = false;
+                        fastFlashComplete = false;
+                        slowFlashStep = 0;
+                        fastFlashStep = 0;
+                        strip.fill(strip.Color(0, 0, 0));
+                        strip.show();
+                        }
+                        }
+                        }
+
+                        // Check if slow flash sequence is complete
+                        bool isSlowFlashComplete() {
+                        return slowFlashComplete;
+                        }
+
+                        // Check if fast flash sequence is complete
+                        bool isFastFlashComplete() {
+                        return fastFlashComplete;
+                        }
+                        };
+
+                        class MotorController {
+                        private:
+                        int pinA1A;
+                        int pinA1B;
+                        int motorSpeed;
+
+                        public:
+                        // Constructor initializing MotorController object
+                        MotorController(int A1A, int A1B)
+                        : pinA1A(A1A), pinA1B(A1B), motorSpeed(0) {
+                        pinMode(pinA1A, OUTPUT);
+                        pinMode(pinA1B, OUTPUT);
+                        }
+
+                        // Set motor speed
+                        void setSpeed(int speed) {
+                        motorSpeed = speed;
+                        analogWrite(pinA1A, motorSpeed);
+                        analogWrite(pinA1B, 0);
+                        }
+                        };
+
+                        // Create LEDStrip and MotorController objects
+                        LEDStrip ledStrip(LED_COUNT, LED_PIN, 400, 100);
+                        MotorController motorController(3, 4);
+
+                        void setup() {
+                        // Initialize LEDStrip object
+                        ledStrip.begin();
+                        }
+
+                        void loop() {
+                        // Update LEDStrip object
+                        ledStrip.update();
+
+                        // Adjust motor speed based on LED flash state
+                        if (!ledStrip.isSlowFlashComplete()) {
+                        motorController.setSpeed(180); // Slow speed during slow flash
+                        } else if (!ledStrip.isFastFlashComplete()) {
+                        motorController.setSpeed(255); // Fast speed during fast flash
+                        } else {
+                        motorController.setSpeed(0); // Stop motor when LED is off
+                        }
+                        }
+                    </code>
+                    </pre>
+                </li>
+            </ol>
+            <p><em>Fin.</em></p>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
