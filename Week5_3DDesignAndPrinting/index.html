@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS70: Week 5</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap">
+</head>
+<body data-spy="scroll" data-target="#navbarNav" data-offset="56">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AboutMe/index.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../FinalProjectIdea/index.html">Final Project Proposal</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="container" style="font-family: 'Roboto', sans-serif; padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <h1 style="text-align: center; font-family: 'Fjalla One', sans-serif; font-size: 60px;">Week 5: 3D Design and Printing</h1>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px;">
+                <em>This week the assignment was to design and print a small object that could not be (easily) made by
+                    subtractive methods, as well as scan something using a photogrammetry, LIDAR, or other application.</em>
+            </p>
+            <h3 style="font-family: 'Roboto', sans-serif; font-size: 25px;">1. When Two Cinematic Universes Collide</h3>
+            <p>
+                3D modelling definitely is not my strong suit, so this week I wanted to do something challenging but fun.
+                I decided to make a wall decoration that combined my love for batman (especially Christian Bale era batman)
+                and my love for the MCU. I chose to design and model a Captain America abstract shield with the batman
+                logo on the star to represent this collision of worlds. (I also added my initials for a personalized touch).
+            </p>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <img src="img/image1.jpg" alt="3d print" style="width: 70%; height: auto; padding: 10px;">
+            </div>
+            <p>
+                <em>List of materials and resources used:</em>
+            </p>
+            <ul>
+                <li>
+                    Prusa 3D printer
+                </li>
+                <li>
+                    Autodesk Fusion 360 software for modelling
+                </li>
+            </ul>
+            <p>
+                <em>Steps for making the "When Two Cinematic Universes Collide" wall decoration:</em>
+            </p>
+            <ol>
+                <li style="padding-top: 10px">
+                    <strong>Modelling the Design in Fusion</strong>
+                    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                        <img src="img/image2.png" alt="batman logo design" style="width: 33%; height: auto; padding-bottom: 10px;">
+                        <img src="img/image4.png" alt="cap shield design" style="width: 33%; height: auto; padding-bottom: 10px;">
+                        <img src="img/image3.png" alt="model design" style="width: 33%; height: auto; padding-bottom: 10px;">
+                    </div>
+                    <ul>
+                        <li>I used a combination of extruded polygons and triangles to create the shield part. This included
+                        extruding in and out of layers to create the desired abstract effect. I also used mirroring and
+                        slicing methods to get the flat back of the star.</li>
+                        <li>I added the circle base of the shield at the bottom to finish off the Captain America shield.</li>
+                        <li>Next I used a downloaded image of the batman logo and the canvas method to outline the logo and create
+                            a body.</li>
+                        <li>I then combined both designs and added the spikes on the circumference of the shield to add an
+                        edgy feel to it.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Printing it!</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image6.png" alt="final design" style="width: 33%; height: auto; padding-right: 10px;">
+                        <video width="33%" height="340vh" controls>
+                            <source src="img/video1.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="img/image5.jpg" alt="printed design" style="width: 33%; height: auto; padding-left: 10px;">
+                    </div>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Links to download my files</strong>
+                    <ul>
+                        <li><a href='files/MaggieWallDecor.f3z' download="MaggieWallDecor">Download my 3D Model file</a></li>
+                        <li><a href='files/MaggieWallDecor.stl' download="MaggieWallDecor">Download my STL file</a></li>
+                        <li><a href='files/MaggieWallDecor.gcode' download="MaggieWallDecor">Download my gcode file</a></li>
+                    </ul>
+                </li>
+            </ol>
+            <h3 style="font-family: 'Roboto', sans-serif; font-size: 25px;">2. Mickey Mouse Scan</h3>
+            <p> For the second part of my assignment I decided to scan my mickey mouse keychain. I faced difficulties due to
+            the scanner not picking up Mickey's dark body well. However, with Kassia's assistance, I covered the keychain in corn
+            starch in order for the scanner to pick it up. This worked out better than I thought it would have and the final
+            result is below. (For some reason the color didnt transfer on the ply/stl files from revo scan.)</p>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <img src="img/image7.png" alt="3d print" style="width: 48%; height: auto; padding: 10px;">
+                <video width="48%" height="340vh" controls>
+                    <source src="img/video2.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <strong>Links to download my files</strong>
+            <ul>
+                <li><a href='files/MaggieMickey.ply' download="MaggieMickey">Download my PLY file</a></li>
+                <li><a href='files/MaggieMickey.stl' download="MaggieMickey">Download my STL file</a></li>
+            </ul>
+            <p><em>Fin.</em></p>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
