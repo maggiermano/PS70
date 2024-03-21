@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS70: Week 7</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap">
+</head>
+<body data-spy="scroll" data-target="#navbarNav" data-offset="56">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AboutMe/index.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../FinalProjectIdea/index.html">Final Project Proposal</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="container" style="font-family: 'Roboto', sans-serif; padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <h1 style="text-align: center; font-family: 'Fjalla One', sans-serif; font-size: 60px;">Week 7: Electronic Output Devices</h1>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px;">
+                <em>This week the assignment was to make a serious attempt at the most challenging/intimidating aspect
+                    of my final project. The assignment requires at least one input and one output device and to write a
+                    microcontroller program that integrates at least one input device and one output device. We also
+                    need to use an oscilloscope to investigate the output device.</em>
+            </p>
+            <h3 style="font-family: 'Roboto', sans-serif; font-size: 25px;">The MVP of the Pothole Probe</h3>
+            <p>
+                The Pothole Probe is a device that uses sensors to detect potholes on roads and dispenses gravel to
+                effectively fill that pothole. The device wouldn't be able to function without a reliable gravel dispenser
+                once the pothole has been sensed. Therefore, the MVP of the probe involves three key items:
+            </p>
+            <ol>
+                <li>Ultrasonic sensor to detect depth/distance (pothole detector)</li>
+                <li>Gravity-dependent rotary valve dispenser</li>
+                <li>Solenoid stopper</li>
+            </ol>
+            <p>
+                Altogether these three elements create the mechanism needed to detect, dispense gravel as well as stop
+                the valve once the pothole has been filled. Thus, this Minimal Viable Product fulfills the purpose of The
+                Pothole Probe.
+            </p>
+
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <img src="img/image1.png" alt="Final MVP design" style="width: 70%; height: auto; padding: 10px;">
+            </div>
+            <p>
+                <em>List of materials and resources used:</em>
+            </p>
+            <ul>
+                <li>
+                    Prusa 3D printer
+                </li>
+                <li>
+                    Wooden dowels
+                </li>
+                <li>
+                    CNC ShopBot Mill
+                </li>
+                <li>
+                    Laser cutter
+                </li>
+                <li>
+                    Autodesk Fusion 360 software for modelling
+                </li>
+            </ul>
+            <p>
+                <em>Steps for making the MVP:</em>
+            </p>
+            <ol>
+                <li style="padding-top: 10px">
+                    <strong>3D Printing the Rotary Valve</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image2.png" alt="batman logo design" style="width: 70%; height: auto; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>I used my final project model <a href="">here</a> to create necessary the necessary 3D file.</li>
+                        <li>I decided to print this part of the rotary valve because of the X shape, so I wouldn't have
+                        to use wood and glue to create it.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>CNC Milling the Base</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image3.png" alt="final design" style="width: 70%; height: auto; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>I used my final project model here as well to create the necessary dxf file for the CNC mill
+                            .</li>
+                        <li>The holes at the back will be used to stop the valve by the solenoid (See a more in depth
+                            description of the model here). I used the CNC here because I needed these holes to be in
+                            precise positions which would be difficult to achieve using a drill. A laser cutter would
+                            also be difficult to use here due to their specific depth.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Assembly</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image4.png" alt="final design" style="width: 70%; height: 90vh; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>After having the rotary valve complete I attached them using a wooden dowel and a bit of
+                        hot glue for stability purposes.</li>
+                        <li>I laser cut two side walls that hold the valve above ground so that it has full range of motion.
+                        I hot glued these walls to a cardboard base. This area of the design is definitely not as stable and
+                        likely to change in future iterations. I imagine a box to replace this in the future that the bucket
+                            of gravel can sit on.</li>
+                        <li>I also made a table attached to the left side wall for solenoid to sit on. This is also likely
+                        to be replaced by a cleaner and more sturdy design.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Final MVP Design Look</strong>
+                    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                        <video width="48%" height="395vh" controls>
+                            <source src="img/video1.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="img/image6.jpg" alt="final look" style="width: 48%; height: auto; padding-bottom: 10px;">
+                    </div>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Ultrasonic Sensor and Solenoid Programming</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image5.png" alt="sensor and solenoid" style="width: 70%; height: 70vh; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>I used class structure arduino programming to program the solenoid to retract once the
+                            ultrasonic sensor detects a certain distance.</li>
+                        <li>This simulates detecting a pothole and releasing the valve to dispense the gravel.</li>
+                    </ul>
+                    <hr>
+                    <em>Arduino Code for MVP</em>
+                    <pre>
+                        <code class="language-arduino">
+                        const int echoPin = 7;
+                        const int trigPin = 8;
+                        const int solPin = 5;
+
+                        class UltrasonicSensor {
+                          private:
+                            int echoPin;
+                            int trigPin;
+                            long previousMillis;
+                            long interval;
+
+                          public:
+                            UltrasonicSensor(int echo, int trig, long interval) {
+                              echoPin = echo;
+                              trigPin = trig;
+                              this->interval = interval;
+                              pinMode(echoPin, INPUT);
+                              pinMode(trigPin, OUTPUT);
+                            }
+
+                            void measureDistance() {
+                              digitalWrite(trigPin, LOW);
+                              delayMicroseconds(2);
+
+                              digitalWrite(trigPin, HIGH);
+                              delayMicroseconds(10);
+
+                              digitalWrite(trigPin, LOW);
+                              long duration = pulseIn(echoPin, HIGH);
+
+                              long distance = duration / 58.2;
+
+                              Serial.println(distance);
+
+                              if (distance >= 20) {
+                                digitalWrite(solPin, HIGH);
+                              } else {
+                                digitalWrite(solPin, LOW);
+                              }
+                            }
+
+                            bool isTimeToUpdate() {
+                              long currentMillis = millis();
+                              if (currentMillis - previousMillis >= interval) {
+                                previousMillis = currentMillis;
+                                return true;
+                              }
+                              return false;
+                            }
+                        };
+
+                        class Sol {
+                          private:
+                            int pin;
+
+                          public:
+                            Sol(int pin) {
+                              this->pin = pin;
+                              pinMode(pin, OUTPUT);
+                            }
+
+                            void turnOn() {
+                              digitalWrite(pin, LOW);
+                            }
+
+                            void turnOff() {
+                              digitalWrite(pin, HIGH);
+                            }
+                        };
+
+                        UltrasonicSensor sensor(echoPin, trigPin, 500);
+                        Sol Sol(solPin);
+
+                        void setup() {
+                          Serial.begin(9600);
+                        }
+
+                        void loop() {
+                          if (sensor.isTimeToUpdate()) {
+                            sensor.measureDistance();
+                          }
+                        }
+                    </code>
+                    </pre>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Oscilloscope Findings</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px; padding:10px">
+                        <video width="33%" height="330vh" controls>
+                            <source src="img/video2.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="img/image7.png" alt="final design" style="width: 33%; height: auto; padding: 10px;">
+                        <video width="33%" height="330vh" controls>
+                            <source src="img/video3.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <ul>
+                        <li>The oscilloscope findings were interesting. When deactivated the solenoid created waves that
+                            crossed in an X-like shape. The waves look similar to sine waves, but weren't uniform as you can
+                            see from the image in the center. The frequency readings ranged from 300-600Hz as seen from the
+                            image on the left.</li>
+                        <li>When activated the solenoid waves are longer and have two peaks. The frequency also increased
+                        to ~4.8 kHz from ~500Hz. This shows the dramatic increase in speed when the solenoid is activated.
+                        This can be seen from the image on the right.</li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ol>
+            <p><em>Fin.</em></p>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
