@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS70: Final Project Ideas</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap">
+</head>
+<body data-spy="scroll" data-target="#navbarNav" data-offset="56">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AboutMe/index.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Final Project Proposal</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="container" style="padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <h1 style="text-align: center; font-family: 'Fjalla One', sans-serif; font-size: 60px;">Final Project</h1>
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">The Pothole Probe</em>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                In my home country, Zimbabwe, potholes are a huge issue and the roads are sometimes undriveable due to
+                the amount and/or sizes of potholes. The issue is enhanced by lack of government support and efficiency
+                to solve the pothole problem leading to many dangerous roads in the country. The presence of potholes
+                can cause burst or flat tires, dangerous roads in rainy/slippery conditions as well as increases travel
+                time for those using those roads. The Pothole Probe is an idea I have of a robot with pothole detecting
+                sensors that moves up and down a road/path and attempts to fill the pothole with tar once it reaches that
+                area.
+            </p>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <img src="img/image1.jpg" alt="Image 1" style="width: 48%; height: auto; padding-bottom: 10px;">
+                <img src="img/image2.jpg" alt="Image 2" style="width: 48%; height: auto; padding-bottom: 10px;">
+            </div>
+
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                For this project, I would be building a model of The Pothole Probe that simulates the intentions of the
+                actual robot. The model would move along a pre-defined path in the x-y plane which would simulate moving
+                up or down a road. Sensors would be attached at various locations on the robot that can detect differences
+                in depth on a surface or something similar in order to detect the holes and crevices as the robot moves
+                along. I thought of the sensors on a roomba vacuum since these vacuums know not to fall off edges.
+                Essentially, the robot would stop right before the hole.
+
+                Then, I would also need a filling system once the location of the pothole has been detected. This could be
+                modelled as dropping some material into the holes.
+
+                The robot would be Arduino-controlled, and I would use many tools learnt in the duration of
+                the course to make it such as: 3D printing, laser cutting, electronics (motors and sensors), etc.
+            </p>
+        </div>
+    </section>
+    <section class="about-section">
+        <div class="container" style="padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">3D Model and Description of Design</em>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                The 3D model of the pothole probe incorporates a bucket or container of gravel sitting on a box. The base
+                of the gravel container will have an opening where gravel will fall into the opening of the box. The box
+                will contain a rotary valve mechanism that turns automatically due to the weight of the gravel. The box will
+                be hollow at the bottom to allow gravel to be dispensed from the base.
+            </p>
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <img src="img/image3.png" alt="Image 3" style="width: 60%; height: auto; padding-bottom: 10px;">
+                <div class="right-images" style="flex-grow: 1; display:flex; flex-direction: column;">
+                    <img src="img/image4.jpeg" alt="Image 4" style="width: 60%; height: auto; padding-bottom: 10px;">
+                    <img src="img/image5.jpeg" alt="Image 4" style="width: 60%; height: auto; padding-bottom: 10px;">
+                </div>
+            </div>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                Potholes will be detected by ultrasonic sensors attached to the base of the box. A solenoid will be activated
+                and will block the rotary valve from moving until the sensors detect a significant change in depth. Once
+                a pothole is detected the solenoid will be deactivated and the valve will be free to move. Gravel will be
+                dispensed for a set amount of time until the solenoid is activated again which will mark the filling of
+                the pothole.
+            </p>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
