@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS70: Week 6</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap">
+</head>
+<body data-spy="scroll" data-target="#navbarNav" data-offset="56">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AboutMe/index.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../FinalProject/index.html">Final Project Proposal</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="container" style="font-family: 'Roboto', sans-serif; padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <h1 style="text-align: center; font-family: 'Fjalla One', sans-serif; font-size: 60px;">Week 6: Electronic Input Devices</h1>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px;">
+                <em>This week the assignment was to make a capacitive sensor to measure a physical quantity with our
+                    microcontroller. On top of that we had to configure and use another sensor
+                    (temperature, microphone, etc.) and include at least one output device (it could just be an LED) in the
+                    circuit. After this we should calibrate each sensor by plotting points on a graph and discuss the
+                    relationship between the signals recorded by your microcontroller and the physical quantities
+                    that are measured (i.e., it is likely not a linear relationship).</em>
+            </p>
+            <h3 style="font-family: 'Roboto', sans-serif; font-size: 25px;">1. Capacitive Water Level Sensor? More Like Water Presence Sensor...</h3>
+            <p>
+                I wanted to make a capacitive water level sensor because I figured this is a very useful sensor in general,
+                but also it is relative to my final project. I imagine if I expanded on my final project in future iterations
+                it would be quite useful to be able to use capacitance to sense when a pothole is filled. However, my sensor
+                ended up being more of a water detector than anything else.
+            </p>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <img src="img/image1.jpg" alt="Capacitive Sensor" style="width: 50%; height: auto; padding: 10px;">
+            </div>
+            <p>
+                <em>List of materials and resources used:</em>
+            </p>
+            <ul>
+                <li>
+                    Aluminium foil
+                </li>
+                <li>
+                    Measuring cup
+                </li>
+                <li>
+                    Arduino Uno
+                </li>
+            </ul>
+            <p>
+                <em>Steps for making the Capacitive Sensor:</em>
+            </p>
+            <ol>
+                <li style="padding-top: 10px">
+                    <strong>Setting up the hardware</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image2.jpg" alt="sensor setup" style="width: 50%; height: auto; padding-bottom: 10px;">
+                    </div>
+                    <ul>
+                        <li>I used two films of aluminum foil and placed them either side of the measuring cup.
+                        I decided to use a measuring cup because it would be easier to read the values and
+                        calibrate the sensor. As you can see from the image above I had the foils take up the entire
+                        sides of the measuring cup to cover the whole depth of the cup.</li>
+                        <li>I then used crocodile clips to connect the foils to the arduino.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Sensor Results</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <video width="33%" height="380vh" controls>
+                            <source src="img/video1.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="img/image3.png" alt="sensor setup" style="width: 33%; height: auto; padding-bottom: 10px;">
+                        <img src="img/image4.png" alt="sensor setup" style="width: 33%; height: auto; padding-bottom: 10px;">
+                    </div>
+                    <ul>
+                        <li>I used arduino code similar to the one we used in class apart from a few exceptions.</li>
+                        <li>I then used the Serial Monitor and Serial Plotter to record any differences observed after
+                            pouring in water at various levels.</li>
+                        <li>I first recorded the initial value of the serial monitor to set a zero point.</li>
+                        <li>The results can be seen in the table and graph above. As you can see the monitor readings
+                        spiked when I poured water inside the measuring cup but did not stay consistent at every water level.
+                        I'm not sure why this came to be. Maybe it was my choice of aluminium foil over copper sheets.
+                        The x value represents the water levels in millimeters and the y value represents the serial
+                        monitor readings.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Circuit diagram sketch and Code</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image9.jpg" alt="Motor stability design" style="width: 80%; height: 50vh; padding-bottom: 10px;">
+                    </div>
+                    <pre>
+                        <code class="language-arduino">
+                        class FoilSensor {
+                        private:
+                            long result;
+                            int foil_analog;
+                            int foil_digital;
+                            unsigned long lastToggleTime;
+                            const unsigned long toggleInterval = 100;
+
+                        public:
+                            FoilSensor(int analogPin, int digitalPin) : foil_analog(analogPin), foil_digital(digitalPin) {}
+
+                            void setup() {
+                                pinMode(foil_digital, OUTPUT);
+                                Serial.begin(9600);
+                                lastToggleTime = millis();
+                            }
+
+                            void loop() {
+                                if (millis() - lastToggleTime >= toggleInterval) {
+                                    result = tx_rx();
+                                    Serial.println(result);
+                                    lastToggleTime = millis();
+                                }
+                            }
+
+                        private:
+                            long tx_rx() {
+                                int read_high;
+                                int read_low;
+                                int diff;
+                                long int sum;
+                                int N_samples = 500;
+
+                                sum = 0;
+
+                                for (int i = 0; i < N_samples; i++) {
+                                    digitalWrite(foil_digital, HIGH);
+                                    read_high = analogRead(foil_analog);
+                                    delayMicroseconds(100);
+                                    digitalWrite(foil_digital, LOW);
+                                    read_low = analogRead(foil_analog);
+                                    diff = read_high - read_low;
+                                    sum += diff;
+                                }
+
+                                return sum / N_samples;
+                            }
+                        };
+
+                        // Define the FoilSensor object with analog and digital pins
+                        FoilSensor foilSensor(A2, 7);
+
+                        void setup() {
+                            foilSensor.setup();
+                        }
+
+                        void loop() {
+                            foilSensor.loop();
+                        }
+                        </code>
+                    </pre>
+                </li>
+            </ol>
+            <h3 style="font-family: 'Roboto', sans-serif; font-size: 25px;">2. Ultrasonic Sensor for Final Project</h3>
+            <p>
+                For the second part of my assignment I decided to calibrate an ultrasonic sensor and have an LED turn on
+                at a specific distance. I will be using ultrasonic sensors for my pothole detector final project that
+                will measure distances from the machine to the surface. If there is a pothole, the distance would increase
+                a certain amount in which case my machine should fill that pothole up. I used a ruler to measure various
+                distances in order to calibrate the sensor with serial monitor readings. These ended up being pretty accurate
+                which serves me well if I wanted to record pothole depths - I could convert serial monitor readings to metric
+                readings.
+            </p>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <video width="50%" height="410vh" controls>
+                    <source src="img/video3.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p>
+                <em>List of materials and resources used:</em>
+            </p>
+            <ul>
+                <li>
+                    Ultrasonic sensor
+                </li>
+                <li>
+                    White LED
+                </li>
+                <li>
+                    30cm Ruler
+                </li>
+                <li>
+                    Arduino Uno
+                </li>
+            </ul>
+            <p>
+                <em>Steps for calibrating the Ultrasonic Sensor:</em>
+            </p>
+            <ol>
+                <li style="padding-top: 10px">
+                    <strong>Setting up the hardware</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image5.png" alt="ultrasonic setup" style="width: 50%; height: auto; padding-bottom: 10px;">
+                    </div>
+                    <ul>
+                        <li>I wired the ultrasonic sensor accordingly to the Arduino Uno. I also wired a white LED that
+                        would light up at the 20cm mark.</li>
+                        <li>I then set up a ruler and white paper so I could see the measurements more easily. I used a
+                        notebook to set distances from the sensor.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Sensor Results</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <video width="33%" height="410vh" controls>
+                            <source src="img/video2.MP4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="img/image6.png" alt="table of results" style="width: 33%; height: auto; padding-right: 10px;">
+                        <img src="img/image7.png" alt="graph" style="width: 33%; height: auto; padding-left: 10px;">
+                    </div>
+                    <ul>
+                        <li>I used simple arduino code that turned the LED on only when the serial monitor recorded a value
+                            of 20.</li>
+                        <li>I first recorded the initial value of the serial monitor to set a zero point which funnily
+                        enough was actually zero.</li>
+                        <li>The results can be seen in the table and graph above. As you can see by the images above, the
+                        sensor readings formed a general linear relationship after calibrating. <em>x</em> in the table
+                            represents centimeter marks from the ruler and <em>y</em> represents serial monitor readings.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Circuit diagram sketch and Code</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image10.jpg" alt="Motor stability design" style="width: 80%; height: 50vh; padding-bottom: 10px;">
+                    </div>
+                    <pre>
+                        <code class="language-arduino">
+                        const int echoPin = 7;
+                        const int trigPin = 8;
+                        const int ledPin = 5;
+
+                        class UltrasonicSensor {
+                          private:
+                            int echoPin;
+                            int trigPin;
+                            long previousMillis;
+                            long interval;
+
+                          public:
+                            UltrasonicSensor(int echo, int trig, long interval) {
+                              echoPin = echo;
+                              trigPin = trig;
+                              this->interval = interval;
+                              pinMode(echoPin, INPUT);
+                              pinMode(trigPin, OUTPUT);
+                            }
+
+                            void measureDistance() {
+                              digitalWrite(trigPin, LOW);
+                              delayMicroseconds(2);
+
+                              digitalWrite(trigPin, HIGH);
+                              delayMicroseconds(10);
+
+                              digitalWrite(trigPin, LOW);
+                              long duration = pulseIn(echoPin, HIGH);
+
+                              long distance = duration / 58.2;
+
+                              Serial.println(distance);
+
+                              if (distance >= 20) {
+                                digitalWrite(ledPin, HIGH);  // Turn on the LED
+                              } else {
+                                digitalWrite(ledPin, LOW);  // Turn off the LED
+                              }
+                            }
+
+                            bool isTimeToUpdate() {
+                              long currentMillis = millis();
+                              if (currentMillis - previousMillis >= interval) {
+                                previousMillis = currentMillis;
+                                return true;
+                              }
+                              return false;
+                            }
+                        };
+
+                        class LED {
+                          private:
+                            int pin;
+
+                          public:
+                            LED(int pin) {
+                              this->pin = pin;
+                              pinMode(pin, OUTPUT);
+                            }
+
+                            void turnOn() {
+                              digitalWrite(pin, HIGH);
+                            }
+
+                            void turnOff() {
+                              digitalWrite(pin, LOW);
+                            }
+                        };
+
+                        UltrasonicSensor sensor(echoPin, trigPin, 500);
+                        LED led(ledPin);
+
+                        void setup() {
+                          Serial.begin(9600);
+                        }
+
+                        void loop() {
+                          if (sensor.isTimeToUpdate()) {
+                            sensor.measureDistance();
+                          }
+                        }
+                        </code>
+                    </pre>
+                </li>
+            </ol>
+            <p><em>Fin.</em></p>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
