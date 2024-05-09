@@ -508,6 +508,113 @@
                     </ul>
                 </li>
             </ol>
+            <div class="code-block">
+                <div class="code-block-header" onclick="toggleCodeBlock(this)">Final Arduino Code</div>
+                <div class="code-block-content">
+                                <pre><code>
+                                const int echoPin = 7;
+                                const int trigPin = 8;
+                                const int solPin = 5;
+
+                                class UltrasonicSensor {
+                                  private:
+                                    int echoPin;
+                                    int trigPin;
+                                    long previousMillis;
+                                    long interval;
+
+                                  public:
+                                    UltrasonicSensor(int echo, int trig, long interval) {
+                                      echoPin = echo;
+                                      trigPin = trig;
+                                      this->interval = interval;
+                                      pinMode(echoPin, INPUT);
+                                      pinMode(trigPin, OUTPUT);
+                                    }
+
+                                    void measureDistance() {
+                                      digitalWrite(trigPin, LOW);
+                                      delayMicroseconds(2);
+
+                                      digitalWrite(trigPin, HIGH);
+                                      delayMicroseconds(10);
+
+                                      digitalWrite(trigPin, LOW);
+                                      long duration = pulseIn(echoPin, HIGH);
+
+                                      long distance = duration / 58.2;
+
+                                      Serial.println(distance);
+
+                                      if (distance >= 20) {
+                                        digitalWrite(solPin, HIGH);
+                                      } else {
+                                        digitalWrite(solPin, LOW);
+                                      }
+                                    }
+
+                                    bool isTimeToUpdate() {
+                                      long currentMillis = millis();
+                                      if (currentMillis - previousMillis >= interval) {
+                                        previousMillis = currentMillis;
+                                        return true;
+                                      }
+                                      return false;
+                                    }
+                                };
+
+                                class Sol {
+                                  private:
+                                    int pin;
+
+                                  public:
+                                    Sol(int pin) {
+                                      this->pin = pin;
+                                      pinMode(pin, OUTPUT);
+                                    }
+
+                                    void turnOn() {
+                                      digitalWrite(pin, LOW);
+                                    }
+
+                                    void turnOff() {
+                                      digitalWrite(pin, HIGH);
+                                    }
+                                };
+
+                                UltrasonicSensor sensor(echoPin, trigPin, 500);
+                                Sol Sol(solPin);
+
+                                void setup() {
+                                  Serial.begin(9600);
+                                }
+
+                                void loop() {
+                                  if (sensor.isTimeToUpdate()) {
+                                    sensor.measureDistance();
+                                  }
+                                }
+                                </code></pre>
+                </div>
+            </div>
+            <script>
+                function toggleCodeBlock(header) {
+                    var content = header.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                }
+            </script>
+            <strong>Links to download CAD and Fusion files</strong>
+            <ul>
+                <li><a href='files/TurnWheel.stl' download="TurnWheel.stl">STL file for the turn-wheel</a></li>
+                <li><a href='files/ValveBase.stl' download="ValveBase.stl">Fusion file for the base of the valve</a></li>
+                <li><a href='files/MVPModel.f3d' download="MVPModel.f3d">Fusion file for MVP model</a></li>
+                <li><a href='files/AssemblyPanels.f3d' download="AssemblyPanels.f3d">Fusion file for assembly front and side panels</a></li>
+                <li><a href='files/AssemblyBase.f3d' download="AssemblyPanels.f3d">Fusion file for assembly base panel</a></li>
+            </ul>
             <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">Testing - Part 2</em>
             <div style="display: flex; justify-content: center; padding-bottom: 10px;">
                 <video width="48%" height="360vh" controls>
