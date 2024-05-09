@@ -512,9 +512,9 @@
                 <div class="code-block-header" onclick="toggleCodeBlock(this)">Final Arduino Code</div>
                 <div class="code-block-content">
                                 <pre><code>
-                                const int echoPin = 7;
-                                const int trigPin = 8;
-                                const int solPin = 5;
+                                const int echoPin = 3;
+                                const int trigPin = 5;
+                                const int solPin = 4;
 
                                 class UltrasonicSensor {
                                   private:
@@ -547,8 +547,16 @@
                                       Serial.println(distance);
 
                                       if (distance >= 20) {
-                                        digitalWrite(solPin, HIGH);
-                                      } else {
+                                        digitalWrite(solPin, HIGH); // Turn on the solenoid
+                                        unsigned long startTime = millis(); // Record the time when solenoid turned on
+
+                                        while (millis() - startTime < 10000) {
+                                          // Do nothing and keep the solenoid on for 30 seconds
+                                        }
+                                        digitalWrite(solPin, LOW); // Turn off the solenoid after 30 seconds
+                                      }
+
+                                      else {
                                         digitalWrite(solPin, LOW);
                                       }
                                     }
@@ -586,7 +594,7 @@
                                 Sol Sol(solPin);
 
                                 void setup() {
-                                  Serial.begin(9600);
+                                  Serial.begin(115200);
                                 }
 
                                 void loop() {
