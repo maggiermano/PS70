@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS70: Week 15</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap">
+    <style>
+        .code-block {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .code-block-header {
+            background-color: #f0f0f0;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .code-block-content {
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#navbarNav" data-offset="56">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../AboutMe/index.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../FinalProject/index.html">Final Project</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="container" style="padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <h1 style="text-align: center; font-family: 'Fjalla One', sans-serif; font-size: 60px;">Final Project</h1>
+            <hr>
+            <h2 style="text-align: center; font-family: 'Roboto', sans-serif; font-size: 35px;">The Pothole Probe</h2>
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">Motivation</em>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                Roads that have potholes on them are not only an inconvenience, but can also be very dangerous to drivers
+                and other users of the road. In my home country, Zimbabwe, potholes are a huge issue and the roads are sometimes undriveable due to
+                the amount and/or sizes of potholes. The issue is enhanced by lack of government support and efficiency
+                to solve the pothole problem leading to many dangerous roads in the country. The presence of potholes
+                can cause burst or flat tires, dangerous roads in rainy/slippery conditions as well as increases travel
+                time for those using those roads.
+            </p>
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <img src="img/image1.jpg" alt="Image 1" style="width: 48%; height: auto; padding-bottom: 10px;">
+                <img src="img/image2.jpg" alt="Image 2" style="width: 48%; height: auto; padding-bottom: 10px;">
+            </div>
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">Project Concept</em>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                Recognizing the urgency of this issue, I came up with the idea of "The Pothole Probe" - a machine with
+                depth detecting sensors that moves up and down a road/path and attempts to fill the pothole with tar/gravel.
+                For this project, I would be building a model of The Pothole Probe that simulates the intentions of the
+                actual machine. The model would move along a straight path which would simulate moving up or down a road.
+                Sensors would be attached to the base of the machine that detect differences in depth on a surface in order
+                to detect the holes as the machine moves along.
+            </p>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                At first, I was going to focus on the driving aspect of this machine. My plan was to make the machine
+                automated where motors were used to drive it along a predefined path. However, because the concept of
+                a driving robot is widely known and many designs for them already exist, I decided to shift my focus
+                to creating a mechanism that would fill the pothole immediate after detection. Thus, my project
+                instead centered on creating a machine that dispensed gravel into a pothole below immediately after
+                the sensors on the machine detected it. The machine would utilize many tools learnt in the duration of
+                the course such as: 3D printing, laser cutting, electronics, etc.
+            </p>
+        </div>
+    </section>
+    <section class="about-section">
+        <div class="container" style="padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">Minimal Viable Product (MVP) Design</em>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                For my MVP design I focused on implementing my electronic input and output devices so that they work in
+                conjunction with each other. I also worked to get the main mechanism that dispenses gravel assembled.
+                I used Fusion to create a 3D model of the idea I had for my project. The image below displays this initial
+                model where a bucket or container (where the gravel would lie) is placed atop a box. The base
+                of the gravel container would have an opening where gravel would fall into the opening of the box. The box
+                will contain a rotary valve mechanism (as seen on the right-hand side of the model) that rotates automatically
+                due to the weight of the gravel. The box will also have an opening at its base to allow gravel to be
+                dispensed into the pothole below.
+            </p>
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <img src="img/image3.png" alt="Image 3" style="width: 60%; height: auto; padding-bottom: 10px;">
+                <div class="right-images" style="flex-grow: 1; display:flex; flex-direction: column;">
+                    <img src="img/image4.jpeg" alt="Image 4" style="width: 60%; height: auto; padding-bottom: 10px;">
+                    <img src="img/image5.jpeg" alt="Image 4" style="width: 60%; height: auto; padding-bottom: 10px;">
+                </div>
+            </div>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                Potholes will be detected using an ultrasonic sensor attached to the base of the box. Ultrasonic sensors
+                measure the distance to an object using ultrasonic sound waves. If attached to the base of the machinery,
+                the sensors will detect and record differences in depth, thus you would be able to tell if a pothole is
+                present. A solenoid will be used to control whether the rotary valve should dispense gravel or not.
+                When activated the solenoid will block the valve from rotating. Once a significant enough depth is detected
+                by the ultrasonic sensors to warrant a pothole, the solenoid will be de-activated to allow the rotary valve
+                to move and dispense gravel. Gravel will be dispensed for a set amount of time until the solenoid is activated
+                again which will mark the filling of the pothole.
+            </p>
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">MVP Assembly</em>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                The MVP consists of three key items:
+            </p>
+            <ol>
+                <li>Ultrasonic sensor to detect depth/distance (pothole detector)</li>
+                <li>Gravity-dependent rotary valve dispenser</li>
+                <li>Solenoid to stop are start the dispensing</li>
+            </ol>
+            <p>
+                Altogether these three elements create the mechanism needed to detect, dispense gravel as well as stop
+                the valve once the pothole has been filled. Thus, this Minimal Viable Product fulfills the purpose of The
+                Pothole Probe.
+            </p>
+            <p>
+                <em>Now we'll look at a detailed assembly approach to the MVP</em>
+            </p>
+            <ol>
+                <li style="padding-top: 10px">
+                    <strong>Making the Rotary Valve</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image7.png" alt="X-shaped part of valve" style="width: 48%; height: auto; padding: 10px;">
+                        <img src="img/image8.png" alt="base of valve" style="width: 48%; height: auto; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>I decided to 3D print the X-shaped part of the valve, so that I wouldn't have to use wood and
+                            glue to create it. I designed the hole in the center to be 5mm in diameter - the same size as
+                            the wooden dowel I would use to hold the valve in place.</li>
+                        <li>I used the CNC machine to mill holes for the base of the valve. I could have drilled the holes,
+                            but this would have taken a lot more time and would not have yielded as accurate results.</li>
+                        <li>The purpose of the holes is to stop the valve with the solenoid. The solenoid will act as a
+                            plug and plug into one of the holes as the valve is rotating.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Assembling the MVP</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image9.png" alt="assembly of design" style="width: 60%; height: auto; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>After completing the rotary valve, I attached them using a wooden dowel and a bit of
+                            hot glue for stability purposes (although due to the tight fit from accurate milling and printing
+                            there was little need for glue).</li>
+                        <li>I laser cut two side walls that hold the valve above ground, so that it has full range of motion.
+                            I hot glued these walls to a cardboard base. This area of the design is definitely not as stable and
+                            the assembly mechanisms will change in future iterations. I imagine a top wooden panel for future
+                            iterations where the bucket of gravel will rest.</li>
+                        <li>I also made a table attached to the left side panel for solenoid to sit on and secured the solenoid
+                            there using a zip tie. This is also likely to be replaced by a cleaner and more sturdy design.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Circuitry and Programming</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image10.png" alt="circuit" style="width: 48%; height: auto; padding: 10px;">
+                        <img src="img/image11.png" alt="circuit diagram" style="width: 48%; height: auto; padding: 10px;">
+                    </div>
+                    <ul style="padding-bottom: 10px;">
+                        <li>I used class structure arduino programming to program the solenoid to retract once the
+                            ultrasonic sensor detects a certain distance. I used similar logic to program the devices together
+                            as I did in the <a href="../Week6_ElectronicInputDevices/index.html">Electronic Inputs assignment</a>
+                            where I turned an LED on once the ultrasonic sensor detected a certain distance.</li>
+                        <li>The solenoid deactivates when the distance is detected and is activated to block the valve again.
+                            The circuit diagram provides an in depth view of how it works and the Arduino code is attached below.</li>
+                    </ul>
+                    <div class="code-block">
+                        <div class="code-block-header" onclick="toggleCodeBlock(this)">Arduino Code For MVP</div>
+                        <div class="code-block-content">
+                                <pre><code>
+                                const int echoPin = 7;
+                                const int trigPin = 8;
+                                const int solPin = 5;
+
+                                class UltrasonicSensor {
+                                  private:
+                                    int echoPin;
+                                    int trigPin;
+                                    long previousMillis;
+                                    long interval;
+
+                                  public:
+                                    UltrasonicSensor(int echo, int trig, long interval) {
+                                      echoPin = echo;
+                                      trigPin = trig;
+                                      this->interval = interval;
+                                      pinMode(echoPin, INPUT);
+                                      pinMode(trigPin, OUTPUT);
+                                    }
+
+                                    void measureDistance() {
+                                      digitalWrite(trigPin, LOW);
+                                      delayMicroseconds(2);
+
+                                      digitalWrite(trigPin, HIGH);
+                                      delayMicroseconds(10);
+
+                                      digitalWrite(trigPin, LOW);
+                                      long duration = pulseIn(echoPin, HIGH);
+
+                                      long distance = duration / 58.2;
+
+                                      Serial.println(distance);
+
+                                      if (distance >= 20) {
+                                        digitalWrite(solPin, HIGH);
+                                      } else {
+                                        digitalWrite(solPin, LOW);
+                                      }
+                                    }
+
+                                    bool isTimeToUpdate() {
+                                      long currentMillis = millis();
+                                      if (currentMillis - previousMillis >= interval) {
+                                        previousMillis = currentMillis;
+                                        return true;
+                                      }
+                                      return false;
+                                    }
+                                };
+
+                                class Sol {
+                                  private:
+                                    int pin;
+
+                                  public:
+                                    Sol(int pin) {
+                                      this->pin = pin;
+                                      pinMode(pin, OUTPUT);
+                                    }
+
+                                    void turnOn() {
+                                      digitalWrite(pin, LOW);
+                                    }
+
+                                    void turnOff() {
+                                      digitalWrite(pin, HIGH);
+                                    }
+                                };
+
+                                UltrasonicSensor sensor(echoPin, trigPin, 500);
+                                Sol Sol(solPin);
+
+                                void setup() {
+                                  Serial.begin(9600);
+                                }
+
+                                void loop() {
+                                  if (sensor.isTimeToUpdate()) {
+                                    sensor.measureDistance();
+                                  }
+                                }
+                                </code></pre>
+                        </div>
+                    </div>
+                    <script>
+                        function toggleCodeBlock(header) {
+                            var content = header.nextElementSibling;
+                            if (content.style.display === "block") {
+                                content.style.display = "none";
+                            } else {
+                                content.style.display = "block";
+                            }
+                        }
+                    </script>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>The Resulting Product</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px; padding:10px">
+                        <img src="img/image6.png" alt="Final MVP design" style="width: 48%; height: auto; padding: 10px;">
+                        <video width="48%" height="360vh" controls>
+                            <source src="img/video1.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <ul>
+                        <li>The video shows the movement of the rotary valve and how the solenoid will work to stop it.</li>
+                        <li>There are many aspects of the MVP to be improved upon, however, the actual mechanism is accurate
+                        to the design of the final model. The next steps would be to work on improving the assembly of the
+                            machine as well as swapping out the Arduino with an esp32 microcontroller so that the machine can
+                        function without being plugged into a laptop.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container" style="padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">Expanding and Improving Assembly</em>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                The MVP had the correct functionality of the machine, but the assembly was shoddy work that included way
+                too much hot glue and cardboard than I would have liked. I decided to keep the rotary valve mechanism as
+                is with only a few adjustments, but threw away the rest of the assembly and started from scratch. I replaced
+                the hot glue connections with screws for a more permanent but neat finish. I also added a base to the machine
+                that had wheels, so the user could simulate moving the machine as if it were moving down a road. These changes
+                are shown in the steps I took to finalize the assembly below.
+            </p>
+            <ol>
+                <li style="padding-top: 10px">
+                    <strong>Rebuilding the Structure</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 20px;">
+                        <img src="img/image12.jpg" alt="rebuilding structure" style="width: 40%; height: auto; padding-bottom: 10px;">
+                        <div class="right-images" style="flex-grow: 1; display:flex; flex-direction: column; padding-left: 90px;">
+                            <img src="img/image13.png" alt="fusion model" style="width: 70%; height: auto; padding-bottom: 10px;">
+                            <img src="img/image14.jpg" alt="model" style="width: 70%; height: auto; padding-bottom: 10px;">
+                        </div>
+                    </div>
+                    <ul>
+                        <li>I laser cut the side panels out again with no changes, however I also cut out panels for the base
+                            and top of the machine. These components have rectangular cutouts in them where the valve will
+                            fall beneath or above them so gravel can be dispensed through.</li>
+                        <li>Once I cut out the necessary parts, I assembled the machine similar to how the MVP looked. I wanted to
+                            make sure the solenoid worked well before screwing things in place.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Making the Base</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image15.jpg" alt="base caster wheel" style="width: 38%; height: auto; padding: 10px;">
+                        <video width="58%" height="415vh" controls>
+                            <source src="img/video2.MOV" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <ul>
+                        <li>I decided to make a mobile base with four wheels at every corner, so that you could move the
+                            machine along a path similar to its real-world application.</li>
+                        <li>I drilled holes into each corner and used M4 nuts to attach caster wheels with M4 screws
+                        already attached to them. After securing the wheels on, the machine has a moving base!</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Changing Direction and Logic of Solenoid</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image16.jpg" alt="assembly of design" style="width: 40%; height: auto; padding: 10px;">
+                        <video width="56%" height="480vh" controls>
+                            <source src="img/video3.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <ul>
+                        <li>One issue I kept having with my MVP was that my solenoid would heat up very quickly. Nathan
+                            informed me that this was because for the majority of time, the solenoid is activated and
+                            drawing a lot of current. However, if you switched the logic and made it so the solenoid activated
+                            to release the valve only when dispensing is taking place and otherwise is deactivated then
+                            this problem would be minimized.</li>
+                        <li>I flipped the solenoid over, but the opposite end was bigger than the end I was previously using
+                            to plug the holes. This meant that I had to make the holes of the valve bigger. I drilled
+                            holes that matched the size of the larger end instead (as seen in the video) before returning
+                            the base of the valve to its place in assembly. </li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Securing the Solenoid</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image17.jpg" alt="assembly of design" style="width: 38%; height: auto; padding: 10px;">
+                        <img src="img/image18.jpg" alt="assembly of design" style="width: 38%; height: auto; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>Now that I had a base I was happy with, I wanted to make a better structure to hold the
+                            solenoid in place. The solenoid had two holes that were already threaded so all I had to do
+                            was screw it down to a block of wood.</li>
+                        <li>I used a 30cm ruler to see what height the block would need to be. This had to be an accurate
+                            reading because the solenoid had to be exactly in line with one of the holes on the base of
+                            the rotary vale. Since the holes on the base were accurately positioned to be along some inner
+                            circumference, this would result in the solenoid blocking the mechanism when needs be.</li>
+                        <li>I changed the position of the solenoid to be near the bottom of the valve unlike the MVP
+                            design which saw it near the top. This made it easier to secure the solenoid whilst achieving
+                            the same effect.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Securing the Machine to its Base</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image19.jpg" alt="assembly of design" style="width: 38%; height: auto; padding: 10px;">
+                        <img src="img/image20.jpg" alt="assembly of design" style="width: 38%; height: auto; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>Now that the solenoid was in place and the structure of the machine was fully built, I was
+                            ready to secure the machine to the base.</li>
+                        <li>For the MVP I used hot glue and the base was made out of cardboard, however now that everything
+                            was wooden, I decided to screw the walls to the base. I used long wooden prisms to screw the
+                            walls to the base by screwing them into the prism and then screwing the prism into the base.</li>
+                    </ul>
+                </li>
+            </ol>
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">Initial Testing</em>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <video width="33%" height="420vh" controls>
+                    <source src="img/video4.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="img/image21.jpg" alt="assembly of design" style="width: 33%; height: auto; padding: 10px;">
+                <video width="33%" height="420vh" controls>
+                    <source src="img/video5.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <ul>
+                <li>After the assembly was finalized I wanted to see the machine in action.</li>
+                <li>The video shows the result of me testing the machine. As you can see, dispensing the gravel
+                    from the bucket in a continuous motion was hard to achieve. The solenoid didn't stay on long
+                    enough for dispensing to take place. The gravel would fall through the side as well as the bottom.
+                    This was my fault because I changed the design to be from a box to a an open sided box. I
+                    thought it would be cooler to see the machine moving!</li>
+                <li>I knew I could fix the solenoid problem, but the issue with continuous dispensing I didn't
+                    expect nor anticipate in time to solve the problem.</li>
+            </ul>
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">Challenges</em>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                Some challenges I faced during the assembly process were drilling parts together. I would miscalculate the
+                distance between holes and wouldnt be able to screw that component in. A way to avoid this in the future
+                would be to model the drill holes into the wooden panels beforehand. That way I would only have to stick
+                screws in them and fasten them. I also had to re-drill the holes at the back of the valve to make them bigger
+                again. This was because the solenoid would get stuck when trying to activate with the weight of the gravel.
+            </p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container" style="padding: 30px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); overflow: hidden;">
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">Expanding and Improving Circuitry and Programming</em>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 17px; padding: 10px;">
+                The electronics aspect worked as intended during MVP week, despite the solenoid heating up. However, there
+                were a lot of adjustments to be made to make the electronics aspect of the project more mobile. I needed to
+                do a couple of things such as: switching out the Arduino Uno for an ESP32, securing the sensor(s) to the
+                base of the machine, soldering various components, having a remote power supply, etc. These were all
+                relatively simple tasks to begin with, but I ended up facing many challenges along the way.
+            </p>
+            <ol>
+                <li style="padding-top: 10px">
+                    <strong>Changing the Circuit</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image24.jpg" alt="X-shaped part of valve" style="width: 48%; height: auto; padding: 10px;">
+                        <img src="img/image23.png" alt="base of valve" style="width: 48%; height: auto; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>First I switched the Arduino Uno out for the XIAO ESP32-C3. Although, this ESP32 wasn't my
+                            first choice, it ended up working pretty well.</li>
+                        <li>When I initially made the switch, I didnt make any changes to my circuit apart from adding
+                            another sensor in case I wanted two for the base of the machine. However, when attempting
+                            to test the circuit, it wouldn't function as expected due to the transistor I was using.</li>
+                        <li>I switched out the MOFSET transistor and added a diode to the circuit logic and the circuit
+                            was back to being functional. The new circuit and its diagram can be seen above. The arduino
+                            in the circuit diagram can be ignored (there was no ESP32 shell on this site).</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Sensor Placement and Soldering</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image22.jpg" alt="X-shaped part of valve" style="width: 33%; height: auto; padding: 10px;">
+                        <img src="img/image25.jpg" alt="base of valve" style="width: 33%; height: auto; padding: 10px;">
+                        <img src="img/image26.jpg" alt="base of valve" style="width: 33%; height: auto; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>At first I was going to screw the ultrasonic sensors to the base of the machine but the holes
+                            were so tiny that this proved difficult so I decided to tape it down. This was not the best
+                            solution, but a good temporary fix.</li>
+                        <li>I soldered the pins to wires that extended up into the breadboard. I used the wire braiding
+                            technique we learnt near the end of class to make the long wires neater and fit more compactly
+                            in my machine.</li>
+                        <li>I then tested the sensor to make sure the soldering worked. The pins shorted a couple times
+                            due to the soldered wires touching but apart from that it worked great.</li>
+                        <li>I also soldered the solenoid to wires so that I didn't have to use crocodile clips anymore.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Attempting To Add Remote Power Source</strong>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <img src="img/image27.jpg" alt="assembly of design" style="width: 30%; height: auto; padding: 10px;">
+                    </div>
+                    <ul>
+                        <li>I powered the ESP32 to a remote power source with no problems. However, when trying to use a
+                            booster to supply 12V to the solenoid instead of using a plugged in power source, the machine
+                            stopped working.</li>
+                        <li>I think there are compatibility issues when using a booster with this specific ESP32 because
+                            it would draw too much current to itself when the booster was connected instead of the power supply.
+                            One one occasion it drew so much current that my laptop which was still powering it at the
+                            time switched off. After this incident I decided to not use the booster, despite soldering and
+                            wiring it correctly.</li>
+                    </ul>
+                </li>
+                <li style="padding-top: 10px">
+                    <strong>Finishing Touches</strong>
+                    <ul>
+                        <li>I adjusted the Arduino code to make it so the solenoid stays activated for a set time before
+                            turning off so that gravel can be dispensed during that time.</li>
+                        <li>I then attached the breadboard to the machine and attempted to test the machine again.</li>
+                    </ul>
+                </li>
+            </ol>
+            <em style="font-family: 'Roboto', sans-serif; font-size: 25px;">Testing - Part 2</em>
+            <div style="display: flex; justify-content: center; padding-bottom: 10px;">
+                <video width="48%" height="360vh" controls>
+                    <source src="img/video6.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <ul>
+                <li>Moving the machine was difficult but this was due to the shoddy cardboard road I had set up.
+                    It would be better to drive it along a more even surface.</li>
+                <li>The solenoid stayed on without turning off which I realized was because the sensors were still
+                    detecting a significant distance so after the timeframe was up it started again because the distance
+                    was larger than the threshold.</li>
+                <li>You can hear the solenoid turn off near the end of the video once the sensors detect a surface
+                    level distance again.</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
